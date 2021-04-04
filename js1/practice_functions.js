@@ -328,14 +328,19 @@ function simpleMath(num1, num2) {
     var div = num1 + " / " + num2 + " = " + parseInt(num1 / num2);
     return "" + add + "\n" + sub + "\n" + mp + "\n" + div;
 }
-function filterNumbers(array) {
-    var numArr = [];
-    for(var i = 0; i < array.length; ++i) {
-        if(typeof array[i] === "number") {
-            numArr.push(array[i]);
-        }
-    }
-    return numArr.sort();
+// function filterNumbers(array) {
+//     var numArr = [];
+//     for(var i = 0; i < array.length; ++i) {
+//         if(typeof array[i] === "number") {
+//             numArr.push(array[i]);
+//         }
+//     }
+//     return numArr.sort(function(a,b) {
+//         return a - b;
+//     });
+// }
+function filterNumbers(array){
+    return array.filter(array => typeof array == "number").sort((a,b) => a-b);
 }
 var dogObjects = [
     {
@@ -413,4 +418,17 @@ function adminList(array) {
         }
     }
     return admins;
+}
+var breads = ["white", "wheat", "rhy", "white"];
+var fillings = ["pb&j", "ham", "cheese steak", "tuna"];
+
+function makeSandwichObjects(arr1, arr2) {
+    var sandwiches = [];
+    for (var i = 0; i < arr1.length; ++i) {
+        sandwiches.push({
+            bread: arr1[i],
+            filling: arr2[i]
+        });
+    }
+    return sandwiches;
 }
