@@ -272,6 +272,7 @@ function countVowels(str) {
     }
     return numOfVowels;
 }
+//randomIntBetween
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
@@ -359,10 +360,16 @@ var dogObjects = [
         age: 10
     }
 ];
+// function getOlder(array) {
+//     for(var i = 0; i < array.length; ++i) {
+//         ++array[i].age;
+//     }
+//     return array;
+// }
 function getOlder(array) {
-    for(var i = 0; i < array.length; ++i) {
-        ++array[i].age;
-    }
+    array.forEach(function(arr){
+        ++arr.age;
+    });
     return array;
 }
 var cars = [
@@ -431,4 +438,34 @@ function makeSandwichObjects(arr1, arr2) {
         });
     }
     return sandwiches;
+}
+var fruits = ['apple', 'banana', ' orange', 'apple', 'pineapple'];
+function allIndexesOf(array, value) {
+    var indOfVal = [];
+    for (var i = 0; i < array.length; ++i) {
+        if(array[i] === value) {
+            indOfVal.push(i);
+        }
+    }
+    return indOfVal;
+}
+function removeAll(array, value) {
+    for(var i = 0; i < array.length; ++i) {
+        if(array[i] === value) {
+            array.splice(i, 1);
+        }
+    }
+    return array;
+}
+function coinFlip() {
+    return Math.round(Math.random());
+}
+function twoDice() {
+    return Math.floor(Math.random() * 12) + 1;
+}
+function twentySidedDie() {
+    return Math.floor(Math.random() * 20) + 1;
+}
+function twelveSidedDie() {
+    return Math.floor(Math.random() * 12) + 1;
 }
