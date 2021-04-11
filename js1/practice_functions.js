@@ -453,6 +453,7 @@ function removeAll(array, value) {
     for(var i = 0; i < array.length; ++i) {
         if(array[i] === value) {
             array.splice(i, 1);
+            --i;
         }
     }
     return array;
@@ -538,4 +539,15 @@ function getShortestString(arr) {
         }
     }
     return shortestStr;
+}
+function addTwoArrays(arr1, arr2) {
+    return arr1.concat(arr2);
+}
+function getUniqueValues(arr) {
+    return Array.from(new Set(arr));
+}
+//returns a copy of original array reversed
+function reverseArray(arr) {
+    var arrCopy = arr.slice();
+    return arrCopy.reverse();
 }
