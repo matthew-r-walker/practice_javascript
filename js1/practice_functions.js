@@ -469,3 +469,73 @@ function twentySidedDie() {
 function twelveSidedDie() {
     return Math.floor(Math.random() * 12) + 1;
 }
+function tetrahedron() {
+    return Math.floor(Math.random() * 4) + 1;
+}
+function rollDie() {
+    return Math.floor(Math.random() * 6) + 1;
+}
+function listOfRolls(num) {
+    var dieRolls = [];
+    for(var i = 0; i < num; ++i) {
+        var rollDie = Math.floor(Math.random() * 6) + 1;
+        dieRolls.push(rollDie);
+    }
+    return dieRolls;
+}
+function listOfRollsFromDieFunc(numOfRolls, diceFunction) {
+    var dieRolls = [];
+    for(var i = 0; i < numOfRolls; ++i) {
+        dieRolls.push(diceFunction());
+    }
+    return dieRolls;
+}
+function first(arr) {
+    return arr[0];
+}
+function secondToLast(arr) {
+    return arr[arr.length -2];
+}
+function rest(arr) {
+    return arr.slice(1);
+}
+// function getLongestString(arr) {
+//     var strArrLength = [];
+//     for(var i =0; i < arr.length; ++i) {
+//         strArrLength.push(arr[i].length);
+//     }
+//     for(var j = 0; j < arr.length; ++j) {
+//         if (Math.max(...strArrLength) === arr[j].length) {
+//             return arr[j];
+//         }
+//     }
+// }
+// function getShortestString(arr) {
+//     var strArrLength = [];
+//     for(var i =0; i < arr.length; ++i) {
+//         strArrLength.push(arr[i].length);
+//     }
+//     for(var j = 0; j < arr.length; ++j) {
+//         if (Math.min(...strArrLength) === arr[j].length) {
+//             return arr[j];
+//         }
+//     }
+// }
+function getLongestString(arr) {
+    var longestStr = arr[0];
+    for(var i =0; i < arr.length; ++i) {
+        if(longestStr.length < arr[i].length) {
+            longestStr = arr[i];
+        }
+    }
+   return longestStr;
+}
+function getShortestString(arr) {
+    var shortestStr = arr[0];
+    for(var i =0; i < arr.length; ++i) {
+        if(shortestStr.length > arr[i].length) {
+            shortestStr = arr[i];
+        }
+    }
+    return shortestStr;
+}
