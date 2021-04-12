@@ -445,6 +445,7 @@ function allIndexesOf(array, value) {
     for (var i = 0; i < array.length; ++i) {
         if(array[i] === value) {
             indOfVal.push(i);
+            --i;
         }
     }
     return indOfVal;
@@ -551,3 +552,18 @@ function reverseArray(arr) {
     var arrCopy = arr.slice();
     return arrCopy.reverse();
 }
+function getRandomQuote() {
+    var quotes = [`"If we have the attitude that it's going to be a great day it usually is." - Catherine Pulsifier`, `"Impossible is just an opinion." - Paulo Coelho`, `"Magic is believing in yourself. If you can make that happen, you can make anything happen." - Johaan Wolfgang Von Goethe`, `"No one is to blame for your future situation but yourself. If you want to be successful, then become "Successful." - Jaymin Shah`, `“I always did something I was a little not ready to do. I think that’s how you grow. When there’s that moment of ‘Wow, I’m not really sure I can do this,’ and you push through those moments, that’s when you have a breakthrough.” – Marissa Mayer`, `“Some people want it to happen, some wish it would happen, others make it happen.” – Michael Jordan`];
+    var randomIndex = Math.floor(Math.random() * quotes.length - 1) + 1;
+    return quotes[randomIndex];
+}
+function getIndexesOf(specValue, value) {
+    var indOfVal = [];
+    for (var i = 0; i < specValue.length; ++i) {
+        if(specValue[i] === value) {
+            indOfVal.push(i);
+        }
+    }
+    return indOfVal;
+}
+
