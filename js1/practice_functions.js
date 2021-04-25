@@ -566,4 +566,68 @@ function getIndexesOf(specValue, value) {
     }
     return indOfVal;
 }
+function moveFirstToLast(arr) {
+    var arrCopy = arr.slice();
+    var first = arrCopy.shift();
+    arrCopy.push(first);
+    return arrCopy;
+}
+function zip(arr1, arr2) {
+    var newArr = [];
+    var theArr = [];
+    if (Array.isArray(arr1) && Array.isArray(arr2) && arr1.length === arr2.length) {
+        for (var i = 0; i < arr1.length; ++i) {
+            newArr.push(arr1[i], arr2[i]);
+            if (newArr.length === 2) {
+                theArr.push(newArr);
+                newArr = [];
+            }
+        }
+    }
+    return theArr;
+}
+// function sumOfPositives(input) {
+//     for (var i = 0;) {
+//         if (input[i] > 0) {
+//
+//         }
+// }
+function sumOfPositives(input) {
+    var posNums = [];
+    input.forEach(function(element){
+        if (element > 0 && typeof element === 'number') {
+            posNums.push(element);
+        }
+    });
+    var sum = 0;
+    for (var i = 0; i < posNums.length; ++i) {
+        sum += posNums[i];
+    }
+    return sum;
+}
+
+
+function carCreator(input) {
+    var newCar = {
+        make: input[0],
+        model: input[1],
+        year: input[2],
+        color: input[3]
+    };
+    return newCar;
+}
+
+function findOdd(A) {
+    var count = 0;
+    for (var i = 0; i < A.length; ++i) {
+        for (var j = 0; j < A.length; ++j) {
+            if (A[i] === A[j]) {
+            ++count
+            }
+        }
+    if (count % 2 !== 0) {
+    return A[i];
+    }
+    }
+}
 
