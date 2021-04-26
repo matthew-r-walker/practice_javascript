@@ -616,7 +616,6 @@ function carCreator(input) {
     };
     return newCar;
 }
-
 function findOdd(A) {
     var count = 0;
     for (var i = 0; i < A.length; ++i) {
@@ -630,4 +629,53 @@ function findOdd(A) {
     }
     }
 }
+// takes in a string of numbers and returns the one that is different (odd or even)
+function iqTest(numbers) {
+    var oddNums = [];
+    var evenNums = [];
+    var numbersArr = numbers.split(' ');
+    for (var i = 0; i < numbersArr.length; ++i) {
+        (numbersArr[i] % 2 !== 0) ? oddNums.push(numbersArr[i]) : evenNums.push(numbersArr[i]);
+    }
+    var answer = (oddNums.length === 1) ? numbersArr.indexOf(oddNums[0]) + 1 : numbersArr.indexOf(evenNums[0]) + 1;
+    return answer;
+}
+// (oddNums.length === 1) ? return numbersArr.indexOf(oddNums[0]) + 1 : return numbersArr.indexOf(evenNums[0]) + 1;
+var testArr = [10, 10, 10, 10, 10, 200, 3, 3, 10, 10, -1, -1];
+var testArr1 = '1 1 1 1 1 1 10';
 
+// takes in a string of numbers and returns the highest and lowest numbers in a string with a space in between
+function highAndLow(numbers) {
+    var numArr = numbers.split(' ');
+    var sortNumArr = numArr.sort((a, b) => a - b);
+    var hiNLo = sortNumArr[sortNumArr.length -1] + ' ' + sortNumArr[0];
+    return hiNLo;
+};
+
+function order(words) {
+    var wordsUnordered = words.split(' ');
+    var orderOf = []; // the unsorted list of numbers which represent the words unordered
+    var inOrder = []; // sorted list of words
+    for (var i = 0; i < words.length; ++i) {
+        if (!isNaN(parseFloat(words[i]))) {
+            orderOf.push(parseFloat(words[i]));
+        }
+    }
+    var arrCopy = orderOf.slice();
+    var orderOfSorted = arrCopy.sort((a, b) => a - b);
+    for (var j = 0; j < orderOfSorted.length; ++j) {
+        for (var k = 0; k < orderOf.length; ++k) {
+            if (orderOfSorted[j] === orderOf[k]) {
+                inOrder.push(wordsUnordered[k]);
+                break;
+            }
+        }
+    }
+    return inOrder.join(' ');
+}
+function makeCar(makeStr, modelStr) {
+    return {
+        make: makeStr,
+        model: modelStr
+    }
+}
