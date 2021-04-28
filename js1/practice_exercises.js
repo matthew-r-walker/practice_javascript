@@ -1029,6 +1029,45 @@ var profileReport = {
     getAverageNumberOfUnreadMessages: function () {
         return parseFloat((profileReport.getTotalNumberOfUnreadMessages() / profileReport.getProfileCount()).toFixed());
     },
+    getAverageAge: function () {
+        var ageTotal = 0;
+        profiles.forEach(function (element) {
+            ageTotal += element.age;
+        });
+        return parseFloat((ageTotal / profileReport.getProfileCount()).toFixed());
+    },
+    getGenderCounts: function () {
+        var males = 0;
+        var females = 0;
+        profiles.forEach(function (element) {
+            if (element.gender === 'male') {
+                ++males
+            } else if (element.gender === 'female') {
+                ++females
+            }
+        });
+        return {m: males, f:females};
+    },
+    getAllCompanyNames: function () {
+        var companiesAndUsers = [];
+        profiles.forEach(function (element){
+            companiesAndUsers.push([element.name, element.company]);
+        });
+        return companiesAndUsers;
+    },
+    getMostCommonEyeColor: function () {
+        var commonEyeColor = [];
+        profiles.forEach(function (element) {
+            commonEyeColor.push(element.eyeColor)
+        });
+        function mode(arr){
+            return arr.sort((a,b) =>
+                arr.filter(v => v===a).length
+                - arr.filter(v => v===b).length
+            ).pop();
+        }
+        return mode(commonEyeColor);
+    },
 
 }
 
