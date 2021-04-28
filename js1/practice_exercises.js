@@ -1011,14 +1011,25 @@ var profileReport = {
         }
         return mode(favFruits);
     },
-    // getTotalNumberOfUnreadMessages: function () {
-    //     var unreadMessagesGreeting = [];
-    //     profiles.forEach(function (element) {
-    //         unreadMessagesGreeting.push(element.greeting.filter(Number));
-    //     });
-    //
-    //     return unreadMessagesGreeting;
-    // }
+    getTotalNumberOfUnreadMessages: function () {
+        var unreadMessagesGreeting = [];
+        var totalUnreadMessages = 0;
+        profiles.forEach(function (element) {
+            unreadMessagesGreeting.push(element.greeting.split(' '));
+        });
+        unreadMessagesGreeting.forEach(function (element) {
+            element.forEach(function (element) {
+                if (!isNaN(element)) {
+                    totalUnreadMessages += parseFloat(element);
+                }
+            });
+        });
+        return totalUnreadMessages;
+    },
+    getAverageNumberOfUnreadMessages: function () {
+        return parseFloat((profileReport.getTotalNumberOfUnreadMessages() / profileReport.getProfileCount()).toFixed());
+    },
+
 }
 
 
