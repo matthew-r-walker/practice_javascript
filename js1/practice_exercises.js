@@ -962,7 +962,7 @@ var profileReport = {
     sumOfAllBalances: function () {
         var allBalancesSum = 0;
         profiles.forEach(function (element) {
-            allBalances += parseFloat(element.balance.replace("$","").replace(/,/g,""));
+            allBalancesSum += parseFloat(element.balance.replace("$","").replace(/,/g,""));
         });
         return allBalancesSum;
     },
@@ -1068,7 +1068,18 @@ var profileReport = {
         }
         return mode(commonEyeColor);
     },
-
+    getBalancesForActiveAndNonActive: function () {
+        var activeBalances = 0;
+        var nonActiveBalances = 0;
+        profiles.forEach(function (element) {
+            if (element.isActive === true) {
+                activeBalances += parseFloat(element.balance.replace("$","").replace(/,/g,""));
+            } else if (element.isActive === false) {
+                nonActiveBalances += parseFloat(element.balance.replace("$","").replace(/,/g,""));
+            }
+        });
+        return {activeBalances: parseFloat(activeBalances.toFixed(2)), nonActiveBalances: parseFloat(nonActiveBalances.toFixed(2))};
+    }
 }
 
 
