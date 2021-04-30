@@ -1082,4 +1082,14 @@ var profileReport = {
     }
 }
 
+//Assignment by reference
+var person1 = {
+    name: 'Bob'
+};
+
+var person2 = person1;
+
+person2.name = 'Jim';
+
+var imADiv = document.getElementById('imADiv').innerHTML = 'Test test';
 

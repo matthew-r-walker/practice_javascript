@@ -329,17 +329,7 @@ function simpleMath(num1, num2) {
     var div = num1 + " / " + num2 + " = " + parseInt(num1 / num2);
     return "" + add + "\n" + sub + "\n" + mp + "\n" + div;
 }
-// function filterNumbers(array) {
-//     var numArr = [];
-//     for(var i = 0; i < array.length; ++i) {
-//         if(typeof array[i] === "number") {
-//             numArr.push(array[i]);
-//         }
-//     }
-//     return numArr.sort(function(a,b) {
-//         return a - b;
-//     });
-// }
+
 function filterNumbers(array){
     return array.filter(array => typeof array == "number").sort((a,b) => a-b);
 }
@@ -360,12 +350,7 @@ var dogObjects = [
         age: 10
     }
 ];
-// function getOlder(array) {
-//     for(var i = 0; i < array.length; ++i) {
-//         ++array[i].age;
-//     }
-//     return array;
-// }
+
 function getOlder(array) {
     array.forEach(function(arr){
         ++arr.age;
@@ -501,28 +486,7 @@ function secondToLast(arr) {
 function rest(arr) {
     return arr.slice(1);
 }
-// function getLongestString(arr) {
-//     var strArrLength = [];
-//     for(var i =0; i < arr.length; ++i) {
-//         strArrLength.push(arr[i].length);
-//     }
-//     for(var j = 0; j < arr.length; ++j) {
-//         if (Math.max(...strArrLength) === arr[j].length) {
-//             return arr[j];
-//         }
-//     }
-// }
-// function getShortestString(arr) {
-//     var strArrLength = [];
-//     for(var i =0; i < arr.length; ++i) {
-//         strArrLength.push(arr[i].length);
-//     }
-//     for(var j = 0; j < arr.length; ++j) {
-//         if (Math.min(...strArrLength) === arr[j].length) {
-//             return arr[j];
-//         }
-//     }
-// }
+
 function getLongestString(arr) {
     var longestStr = arr[0];
     for(var i =0; i < arr.length; ++i) {
@@ -586,12 +550,7 @@ function zip(arr1, arr2) {
     }
     return theArr;
 }
-// function sumOfPositives(input) {
-//     for (var i = 0;) {
-//         if (input[i] > 0) {
-//
-//         }
-// }
+
 function sumOfPositives(input) {
     var posNums = [];
     input.forEach(function(element){
