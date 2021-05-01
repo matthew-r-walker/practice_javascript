@@ -1091,5 +1091,7 @@ var person2 = person1;
 
 person2.name = 'Jim';
 
-var imADiv = document.getElementById('imADiv').innerHTML = 'Test test';
+var imADiv = document.getElementById('imADiv');
+
+imADiv.innerHTML = 'Changing it up';
 

@@ -2,3 +2,5 @@
 *.iml
 .DS_STORE
 bom-intro.html
+JQuery-intro.html
+JQuery-intro.js
