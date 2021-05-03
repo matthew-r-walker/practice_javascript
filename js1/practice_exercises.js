@@ -1093,5 +1093,17 @@ person2.name = 'Jim';
 
 var imADiv = document.getElementById('imADiv');
 
-imADiv.innerHTML = 'Changing it up';
+imADiv.addEventListener('click', function() {
+    imADiv.innerHTML = 'WOOO dom event';
+});
 
+var background = document.getElementById('body');
+
+background.addEventListener('keypress', ifGKey);
+
+function ifGKey(e) {
+    var key = e.key.toLowerCase();
+    if (key === 'g') {
+        background.style.background = 'purple';
+    }
+}

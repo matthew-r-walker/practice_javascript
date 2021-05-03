@@ -638,3 +638,13 @@ function makeCar(makeStr, modelStr) {
         model: modelStr
     }
 }
+// makes a "private var"
+var privateVar = function() {
+    var x = 'What is in X?';
+    var accessor = function(){ return x;};
+    return {
+        accessor: accessor
+    };
+}
+var privateVarAcc = privateVar();
+//console.log(privateVarAcc.accessor());
