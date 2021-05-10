@@ -1097,13 +1097,64 @@ imADiv.addEventListener('click', function() {
     imADiv.innerHTML = 'WOOO dom event';
 });
 
+
 var background = document.getElementById('body');
 
 background.addEventListener('keypress', ifGKey);
 
+
+// If you press the g key background changes to grey
 function ifGKey(e) {
     var key = e.key.toLowerCase();
     if (key === 'g') {
-        background.style.background = 'purple';
+        background.style.background = '#c0ffc0';
     }
 }
+
+// $('<h3 id="wow">').html('This is pretty neat').appendTo('body');
+
+$('body').append('<button id="blob-create">Create blob</button>');
+
+$('#blob-create').click(function (event){
+    $('<h3 id="timer">').html('Blob will be created in <span>3</span>').appendTo('body');
+    setInterval(timerWithBlobCreator, 1000);
+    $(this).off(event);
+});
+
+var timer = 3;
+// Creates the blob with fade in and shows timer till creation
+function timerWithBlobCreator() {
+    if (timer === 0) {
+        $('body').append('<h1 id="the-blob" class="blob"></h1>');
+        $('#the-blob').fadeIn(2000);
+        $('#timer').remove();
+    } else {
+        --timer;
+    }
+    $('h3 span').html(timer);
+}
+// Moves the blob on screen with arrow keys
+var keymap = {};
+onkeydown = onkeyup = function (e) {
+    var animateMovement = {};
+    keymap[e.key] = e.type === 'keydown';
+    if (keymap.ArrowUp) {
+        animateMovement.bottom = "+=20";
+    }
+    if (keymap.ArrowLeft) {
+        animateMovement.left = "-=20";
+    }
+    if (keymap.ArrowDown) {
+        animateMovement.bottom = "-=20";
+    }
+    if (keymap.ArrowRight) {
+        animateMovement.left = "+=20";
+    }
+    $('#the-blob').animate(animateMovement, 60);
+}
+
+// var keys = ['one', 'two', 'three', 'four'];
+// var ob = {one: 1, two: 2, three: 3, four: 4};
+// for(var i = 0; i < keys.length; i++){
+//     console.log(ob[keys[i]]);
+// }
