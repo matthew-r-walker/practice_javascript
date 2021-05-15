@@ -357,7 +357,7 @@ function getOlder(array) {
     });
     return array;
 }
-var cars = [
+var carsArr = [
     {
         make: "Volvo",
         color: "red",

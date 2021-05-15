@@ -1158,3 +1158,76 @@ onkeydown = onkeyup = function (e) {
 // for(var i = 0; i < keys.length; i++){
 //     console.log(ob[keys[i]]);
 // }
+
+const cars = [
+    {
+        make: 'Honda',
+        model: 'Civic',
+        mileage: 22345
+    },
+    {
+        make: 'Toyota',
+        model: 'Corrola',
+        mileage: 1345
+    },
+    {
+        make: 'Ford',
+        model: 'Mustang',
+        mileage: 1245
+    },
+    {
+        make: 'Kia',
+        model: 'Forte',
+        mileage: 11235
+    },
+    {
+        make: 'Chevy',
+        model: 'Silverado',
+        mileage: 12343
+    }
+];
+
+const under10K = cars.filter(car => car.mileage < 10000);
+
+const mileages = cars.map(car => car.mileage);
+
+// mileages.forEach(mileage => {
+//     output += `<p>${mileage}</p>`;
+//     $('#output').html(output);
+// });
+
+let output = '';
+let prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
+let pricesAfterTax = [];
+
+// prices.forEach( (item, index) => {
+//     output += `<p>${item} is at index ${index}</p>`;
+//     $('#output').html(output);
+// });
+
+// prices.forEach( (item, index) => {
+//     let tax = (item * 0.0825).toFixed(2);
+//     let total = (parseFloat(item) + parseFloat(tax)).toFixed(2);
+//     output += `<p>Item number ${index + 1}. Price: $${item}. Tax: $${tax}. Total $${total}</p>`;
+//     $('#output').html(output);
+// });
+
+// pricesAfterTax = prices.map(item => {
+//     let tax = (item * 0.0825).toFixed(2);
+//     let total = (parseFloat(item) + parseFloat(tax)).toFixed(2);
+//     return parseFloat(total);
+// });
+//
+// pricesAfterTax.forEach(item => {
+//     output += `<p>${item}</p>`;
+//     $('#output').html(output);
+// })
+
+// let things = ['book', 'pencil', 'marker', 'eraser'];
+// let pluralThings = things.map((thing, index) => {
+//     if (index === 0) {
+//         output = '<p>You must bring the following items</p>'
+//     }
+//     output += `<p>${thing}s</p>`;
+//     $('#output').html(output);
+// });
