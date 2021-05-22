@@ -1190,6 +1190,25 @@ const cars = [
 const under10K = cars.filter(car => car.mileage < 10000);
 
 const mileages = cars.map(car => car.mileage);
+//
+// const mileages = cars.reduce((accumulator, car) => {
+//     accumulator.push(car.mileage);
+//     return accumulator;
+// }, []);
+//
+// const highestMileage = cars.reduce((acc,car,index,carArr) => {
+//     if (index === carArr.length -1) {
+//         acc.push(car.make);
+//         acc.sort((a, b) => b-a);
+//         return acc[0];
+//     } else {
+//         acc.push(car.make);
+//         return acc;
+//     }
+// },[]);
+
+
+
 
 // mileages.forEach(mileage => {
 //     output += `<p>${mileage}</p>`;
@@ -1231,3 +1250,5 @@ let pricesAfterTax = [];
 //     output += `<p>${thing}s</p>`;
 //     $('#output').html(output);
 // });
+let numbers = [1, 2, 3, 4, 5];
+numbers.map(n => n * 3);
