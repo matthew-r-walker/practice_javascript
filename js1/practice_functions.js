@@ -648,3 +648,37 @@ var privateVar = function() {
 }
 var privateVarAcc = privateVar();
 //console.log(privateVarAcc.accessor());
+
+//Work in progress, takes words separated by - or _ and returns them camel case or upper camel case
+// function toCamelCase(str){
+//     if (str === '') {
+//         return '';
+//     }
+//     if(typeof str === 'string' && str.length >= 1) {
+//         if (str.includes('-')) {
+//             let strArr = str.split('-');
+//             for(let strs of strArr) {
+//                 if (strs.charAt(0) === strs.charAt(0).toUpperCase()) {
+//                     return strArr.join('');
+//                 } else {
+//                     strs.charAt(0).toUpperCase();
+//                 }
+//             }
+//             let camelStr = strArr.join('');
+//             camelStr.charAt(0).toLowerCase();
+//             return camelStr;
+//         }
+//         if (str.includes('_')) {
+//             let strArr = str.split('_');
+//             if (strArr[0].charAt(0) === strArr[0].charAt(0).toUpperCase()) {
+//                 return strArr.join('');
+//             }
+//             for(let strs of strArr) {
+//                 strs.charAt(0).toUpperCase();
+//             }
+//             let camelStr = strArr.join('');
+//             camelStr.charAt(0).toUpperCase();
+//             return camelStr;
+//         }
+//     }
+// }
