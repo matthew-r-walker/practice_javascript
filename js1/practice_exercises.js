@@ -1252,3 +1252,27 @@ let pricesAfterTax = [];
 // });
 let numbers = [1, 2, 3, 4, 5];
 numbers.map(n => n * 3);
+// Example of encapsulation with private and public properties.
+var Dog = (function () {
+
+    // Private
+    var play = function () {
+        // play implementation
+    };
+
+    // Private
+    var breed = "Dalmatian"
+
+    // Public
+    var name = "Rex";
+
+    // Public
+    var makeNoise = function () {
+        return 'Bark bark!';
+    };
+
+    return {
+        makeNoise: makeNoise,
+        name: name
+    };
+})();
