@@ -682,3 +682,16 @@ var privateVarAcc = privateVar();
 //         }
 //     }
 // }
+
+// iife private var
+(function() {
+    var x = 10;
+
+    var whatIsX = function() {
+        return x;
+    }
+
+    return {
+        whatIsX: whatIsX
+    };
+})();
