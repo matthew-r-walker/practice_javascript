@@ -695,3 +695,10 @@ var privateVarAcc = privateVar();
         whatIsX: whatIsX
     };
 })();
+
+function length(str) {
+    if (str === "") {
+        return 0;
+    }
+    return 1 + length(str.slice(0, -1));
+}
