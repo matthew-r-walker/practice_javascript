@@ -695,7 +695,7 @@ var privateVarAcc = privateVar();
         whatIsX: whatIsX
     };
 })();
-
+// returns length of string with recursion
 function length(str) {
     if (str === "") {
         return 0;
