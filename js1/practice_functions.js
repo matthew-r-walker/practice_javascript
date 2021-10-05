@@ -720,3 +720,10 @@ function code(num) {
         console.log("I will code every day.")
     }
 }
+
+function splitter(str) {
+    let arr = str.split(" ");
+    for (var i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+    }
+}
