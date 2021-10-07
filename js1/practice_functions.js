@@ -755,3 +755,18 @@ function magicEightBall() {
     let randNum = Math.floor(Math.random() * (answers.length));
     console.log(answers[randNum]);
 }
+
+function typeOfInput(input) {
+    console.log(typeOf(input));
+}
+
+function manyTimes(num) {
+    for (var i = 0; i < num; i++) {
+        console.log(num)
+    }
+}
+
+function daysToHours(num) {
+    console.log(num * 24);
+}
+
