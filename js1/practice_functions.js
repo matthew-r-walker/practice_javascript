@@ -770,3 +770,13 @@ function daysToHours(num) {
     console.log(num * 24);
 }
 
+function guessTheNum(num) {
+    let randNum = Math.floor(Math.random() * (10) + 1);
+    if (typeOf(num) === "number" && randNum === num) {
+        console.log("You got it!")
+    } else {
+        console.log("Try again!")
+    }
+    console.log("The random number was: " + randNum);
+}
+
