@@ -794,3 +794,53 @@ function fizzBuzz() {
     }
 }
 
+function fibonacciSeq(num) {
+    if (num <= 1) return 1;
+    return fibonacciSeq(num - 1) + fibonacciSeq(num -2);
+}
+
+function fibLoop(num) {
+    let x = 1, y = 0, z;
+
+    while (num >= 0) {
+        z = x;
+        x = x + y;
+        y = z;
+        num--;
+    }
+    return y;
+}
+
+function fibSeq(num) {
+    let arr = [], x = 1, i = 0, j;
+
+    while(num > 0) {
+        j = x + i;
+        arr.push(j);
+        x = i;
+        i = j;
+        num = num - 1;
+    }
+    return arr;
+}
+
+function coinChallenge(value) {
+    let coins = [5, 3, 1];
+    let remainingValue = value;
+    let totalCoins = 0;
+    checkFit();
+    function checkFit() {
+        for (let i = 0; i < coins.length; i++) {
+            if (i <= remainingValue) {
+                ++totalCoins;
+                remainingValue -= coins[i];
+                if (remainingValue === 0) {
+                    return totalCoins.length;
+                } else {
+                    checkFit();
+                }
+            }
+        }
+    }
+    return totalCoins;
+}
