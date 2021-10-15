@@ -157,9 +157,6 @@ function isLowerCase(letter) {
 function isSpace(letter) {
     return letter === " ";
 }
-function not(input) {
-    return !input;
-}
 function isBoolean(input) {
     return typeof input == "boolean";
 }
@@ -243,9 +240,6 @@ function absoluteValue(num) {
 }
 function rollDice(sides) {
     return Math.floor(Math.random() * sides) + 1;
-}
-function first(input) {
-    return input[0];
 }
 function last(input) {
     return input[input.length -1];
@@ -483,7 +477,7 @@ function first(arr) {
 function secondToLast(arr) {
     return arr[arr.length -2];
 }
-function rest(arr) {
+function restArr(arr) {
     return arr.slice(1);
 }
 
@@ -567,13 +561,12 @@ function sumOfPositives(input) {
 
 
 function carCreator(input) {
-    var newCar = {
+    return {
         make: input[0],
         model: input[1],
         year: input[2],
         color: input[3]
     };
-    return newCar;
 }
 function findOdd(A) {
     var count = 0;
@@ -851,4 +844,20 @@ function numberSort(nums) {
         return a-b;
     });
     return nums;
+}
+
+let testForFlatArr = [1, 2, 3, [[[4, 5, 6]]]];
+
+function arrAutoFlattener(arr) {
+    let depth = 0;
+    checker(arr);
+    function checker(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (Array.isArray(arr[i])) {
+                ++depth;
+                checker(arr[i]);
+            }
+        }
+    }
+    return arr.flat(depth);
 }
