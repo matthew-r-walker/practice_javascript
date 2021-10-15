@@ -844,3 +844,11 @@ function coinChallenge(value) {
     }
     return totalCoins;
 }
+let numArrUnsorted = [3, 4, 1, 5, 2, 6, 9, 8];
+
+function numberSort(nums) {
+    nums.sort(function (a, b) {
+        return a-b;
+    });
+    return nums;
+}
